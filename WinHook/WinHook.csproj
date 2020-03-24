@@ -44,6 +44,7 @@
     <RepositoryUrl>https://github.com/mkaraki/WinHook</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageOutputPath>bin\Pack</PackageOutputPath>
+    <NuspecFile>WinHook.nuspec</NuspecFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -8,7 +8,8 @@
     <owners>$author$</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
-    <projectUrl>http://github.com/mkaraki/WinHook</projectUrl>
+    <projectUrl>https://github.com/mkaraki/WinHook</projectUrl>
+    <repository type="git" url="https://github.com/mkaraki/WinHook.git" />
     <description>$description$</description>
     <copyright>Copyright 2020 mkaraki</copyright>
   </metadata>
