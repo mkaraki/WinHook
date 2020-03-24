@@ -13,12 +13,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - uses: warrenbuckley/Setup-Nuget@v1
+    - uses: nuget/setup-nuget@v1
+      with:
+        nuget-version: '5.x'
     - run: nuget restore $Env:GITHUB_WORKSPACE\WinHook\WinHook.csproj
     - uses: warrenbuckley/Setup-MSBuild@v1
     - run: MSBuild.exe $Env:GITHUB_WORKSPACE\WinHook\WinHook.csproj -p:Configuration=Release
       timeout-minutes: 5
-    - uses: actions/upload-artifact@v1.0.0
-      with:
-          name: artifacts
-          path: WinHook\bin\Release\WinHook.dll
+    - run: nuget pack $Env:GITHUB_WORKSPACE\WinHook\WinHook.csproj -Properties Configuration=Release
+    - run: nuget sources add -name "GPR" -Source https://nuget.pkg.github.com/mkaraki/index.json -Username mkaraki -Password ${{ secrets.GITHUB_TOKEN }}
+    - run: nuget push *.nupkg -Source "GPR" -SkipDuplicate
