@@ -34,18 +34,13 @@ namespace WinHook
 
         public bool CallNextHook { get; set; } = true;
 
+        internal HOOKPROC CallbackMethod;
         public WinHook(WHid idHook, IntPtr? hmod = null, uint dwThreadId = 0) : this((int)idHook, hmod, dwThreadId) {}
 
         public WinHook(int idHook, IntPtr? hmod = null, uint dwThreadId = 0) 
         {
-            hhk = SetWindowsHookEx(idHook, Callback, hmod ?? IntPtr.Zero, dwThreadId);
-        }
-
-        //internal WinHook(WHid idHook,HOOKPROC lpfn, IntPtr? hmod = null, uint dwThreadId = 0) : this((int)idHook, lpfn, hmod, dwThreadId) {}
-
-        internal WinHook(int idHook,HOOKPROC lpfn, IntPtr? hmod = null, uint dwThreadId = 0)
-        {
-            hhk = SetWindowsHookEx(idHook, lpfn, hmod ?? IntPtr.Zero, dwThreadId);
+            CallbackMethod = Callback;
+            hhk = SetWindowsHookEx(idHook, CallbackMethod, hmod ?? IntPtr.Zero, dwThreadId);
         }
 
         public void Dispose()

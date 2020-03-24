@@ -41,6 +41,7 @@
     <Description>
       Windows Hook Wrapper
     </Description>
+    <RepositoryUrl>https://github.com/mkaraki/WinHook</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageOutputPath>bin\Pack</PackageOutputPath>
   </PropertyGroup>
