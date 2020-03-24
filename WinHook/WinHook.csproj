@@ -36,7 +36,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <PackageId>WinHook</PackageId>
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
     <Authors>mkaraki</Authors>
     <Description>
       Windows Hook Wrapper

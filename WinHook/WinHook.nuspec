@@ -9,10 +9,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
     <projectUrl>http://github.com/mkaraki/WinHook</projectUrl>
-    <!-- <iconUrl>http://icon_url_here_or_delete_this_line/</iconUrl> -->
     <description>$description$</description>
-    <releaseNotes>First release</releaseNotes>
     <copyright>Copyright 2020 mkaraki</copyright>
-    <tags></tags>
   </metadata>
 </package>
